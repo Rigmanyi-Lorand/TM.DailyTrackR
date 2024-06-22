@@ -1,0 +1,127 @@
+﻿<Window x:Class="TM.DailyTrackR.View.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TM.DailyTrackR.View"
+        mc:Ignorable="d"
+        WindowStartupLocation="CenterScreen"
+        Title="TM Daily TrackR" Height="450" Width="800"
+        ResizeMode="CanResize"
+        Topmost="False">
+
+    <Window.Resources>
+        <Style x:Key="ButtonStyle" TargetType="Button">
+            <Setter Property="Background" Value="Turquoise"></Setter>
+            <Setter Property="Height" Value="100"></Setter>
+            <Setter Property="Width" Value="200"></Setter>
+            <Setter Property="Foreground" Value="Black"></Setter>
+            <Setter Property="Margin" Value="10"></Setter>
+            <Setter Property="FontWeight" Value="Bold"></Setter>
+            <Setter Property="FontSize" Value="20"></Setter>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="BlueViolet" BorderBrush="DarkGoldenrod" BorderThickness="5" CornerRadius="10">
+                            <TextBlock Text="Click" TextAlignment="Center" VerticalAlignment="Center" Margin="2"></TextBlock>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+
+        </Style>
+        <DataTemplate x:Key="ComboboxTemplate">
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="{Binding Username}" FontSize="20" FontWeight="Bold"></TextBlock>
+                <TextBlock Text="=>" FontSize="20" FontWeight="Bold"></TextBlock>
+                <TextBlock Text="{Binding Username}" FontSize="20" FontWeight="Bold"></TextBlock>
+            </StackPanel>
+        </DataTemplate>
+    </Window.Resources>
+
+    <StackPanel>
+        <!--<TextBox Text="{Binding Username, UpdateSourceTrigger=PropertyChanged}" FontSize="40"></TextBox>
+        <TextBox Text="{Binding Password, UpdateSourceTrigger=PropertyChanged}" FontSize="40"></TextBox>
+        <TextBlock Text="{Binding Username}" FontSize="40"></TextBlock>
+        <TextBlock Text="{Binding Password}" FontSize="40"></TextBlock>-->
+        <ComboBox ItemsSource="{Binding ListOfNumber}"></ComboBox>
+        <Button Style="{StaticResource ButtonStyle}" Content="Delete" Command="{Binding DeleteElementFromIndexExecute}"></Button>
+        <Button Content="NewWindow" Command="{Binding NewWindowComman}"></Button>
+    </StackPanel>
+        
+        
+
+        <!--<Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+ 
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+
+
+        <Rectangle Fill="Green"></Rectangle>
+        <Rectangle Grid.Column="1" Fill="Yellow"></Rectangle>
+        <Rectangle Grid.Column="1" Grid.Row="1" Fill="Red"></Rectangle>
+        <Rectangle Grid.Column="1" Fill="Yellow"></Rectangle>
+        <Button Margin="10" Padding="2" Grid.Column="1" Background="Blue"
+                Width="100" Height="100">
+            <Button.ContextMenu>
+                <ContextMenu>
+                    <MenuItem Header="Add">
+                        <MenuItem Header="324"></MenuItem>
+                    </MenuItem>
+                    <MenuItem Header="Paste"></MenuItem>
+                    <MenuItem Header="Delete"></MenuItem>
+                    <MenuItem Header="fad"></MenuItem>
+                </ContextMenu>
+            </Button.ContextMenu>
+        </Button>
+        <ComboBox x:Name="ComboBox1" Grid.Row="1" Grid.Column="1" Background="Gray">
+        </ComboBox>
+        <DataGrid x:Name="ItemsDataGrid" Grid.Row="2" Grid.Column="2" Background="Pink">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Text"></DataGridTextColumn>
+                <DataGridCheckBoxColumn Header="CheckBox"></DataGridCheckBoxColumn>
+                <DataGridComboBoxColumn Header="comobox"></DataGridComboBoxColumn>
+                <DataGridHyperlinkColumn Header="Hyperlink"></DataGridHyperlinkColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <StackPanel x:Name="ChackPanel" Grid.Row="2" Grid.Column="0" Orientation="Horizontal">
+            <Button Margin="5,0">Button1</Button>
+            <Button Margin="5,0">Button2</Button>
+            <Button Margin="5,0">Button3</Button>
+        </StackPanel>
+
+        <Calendar Grid.Row="2" Grid.Column="1" DisplayDateEnd="2024-06-16" DisplayDateStart="2024-06-05" ></Calendar>
+        <DatePicker IsTodayHighlighted="False" SelectedDate="2024-06-20" SelectedDateFormat="Short">
+            <DatePicker.BlackoutDates>
+                <CalendarDateRange Start="2024-06-01" End="2024-06-01"></CalendarDateRange>
+            </DatePicker.BlackoutDates>
+        </DatePicker>
+
+        <TabControl>
+            <TabItem Header="Calendar">
+                <Calendar></Calendar>
+            </TabItem>
+            <TabItem Header="DatePicker">
+                <DatePicker>
+                    
+                </DatePicker>
+            </TabItem>
+        </TabControl>-->
+
+      
+        <!--<TextBox x:Name="Textbox1" Text="{Binding ElementName=TextBlock1, Path=Text, UpdateSourceTrigger=Explicit, Mode=TwoWay}" ></TextBox>-->
+        <!--<Button Grid.Column="3" Click="ApasaEvent" Width="500">Button1</Button>
+        <TextBlock x:Name="TextBlock1" Grid.Row="1" Background="Red" Width="{Binding Path=Width, RelativeSource={RelativeSource, AncestorType=Button} }" ></TextBlock>-->
+   
+    <!--</Grid>-->
+</Window>
